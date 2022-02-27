@@ -1,0 +1,15 @@
+# /etc/systemd/system/teamspeak.service
+[Unit]
+Description=Teamspeak
+
+[Service]
+Environment=TS3SERVER_LICENSE=accept
+Environment=LD_LIBRARY_PATH=/home/ts3/teamspeak3-server_linux_amd64
+WorkingDirectory=/home/ts3/teamspeak3-server_linux_amd64
+ExecStart=/home/ts3/teamspeak3-server_linux_amd64/ts3server
+User=ts3
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=network-online.target

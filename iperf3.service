@@ -1,0 +1,12 @@
+# /etc/systemd/system/iperf3.service
+[Unit]
+Description=An iperf3 service for bandwidth measurements
+
+[Service]
+ExecStart=/usr/bin/iperf3 -s
+User=daemon
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=network-online.target

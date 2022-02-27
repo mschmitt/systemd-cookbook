@@ -1,0 +1,11 @@
+# ~/.config/systemd/user/dropbox.service
+[Unit]
+Description=Local dropbox service
+
+[Service]
+ExecStart=%h/.dropbox-dist/dropboxd
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=default.target
